@@ -1,4 +1,32 @@
 ---
 import "../components/blog_card.astro"
----
+import "../styles/global.css"
 
+import Layout from '../layouts/Layout.astro';
+
+---
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width" />
+        <title>Advith Krishnan's Blog</title>
+    </head>
+    <body>
+    <Layout>
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact Me</a>
+
+        <h1>Advith Krishnan's Blog</h1>
+        <p>
+            I will be writing a wide variety of content, ranging from upcoming 
+            research work, new tech trends and how I navigate my life and how it might 
+            help you in some way.
+        </p>
+        <ul>
+            <li><a href="/posts/post-1/">Blog Post 1</a></li>
+            <li><a href="/posts/post-2/">Blog Post 2</a></li>
+        </ul>
+    </Layout>
+    </body>
+</html>
