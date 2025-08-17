@@ -65,3 +65,7 @@ a {
 .navbar-refs:hover a {
     color: white; /* Changes text color to black when hovering over the button */
 }
+
+.navbar-header {
+    color: white;
+}
