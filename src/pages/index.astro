@@ -16,14 +16,55 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
 
 <Layout>
 <!-- Hero Section -->
-<div class="hero bg-zinc-900 text-white py-8 px-8 text-center rounded-lg shadow-md mx-6">
+<div class="hero bg-zinc-900 text-white py-8 px-8 text-center rounded-lg mx-6 animate-fadeIn delay-1">
     <h1 class="text-6xl font-semibold text-white text-center">Hi! I'm Advith Krishnan :)</h1>
-  <!-- <a href="#cards" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded">Explore More</a> -->
+    <p class="text-2xl font-medium text-gray-300 mt-4">
+      I can be your <span id="role" class="text-white bg-sky-400 px-2 py-1"></span>
+    </p>
 </div>
 
+<script>
+	const roles = [" AI/ML Engineer ", " Software Engineer ", " AI Researcher ", " Full Stack Engineer ", " Designer ", " Freelancer ", " Technical Writer "]
+    let currentIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeRole() {
+        const roleElement = document.getElementById('role');
+        const currentRole = roles[currentIndex];
+
+        if (isDeleting) {
+            // Remove characters but stop at 1 character
+            roleElement.textContent = currentRole.substring(0, charIndex--);
+        } else {
+            // Add characters
+            roleElement.textContent = currentRole.substring(0, charIndex++);
+        }
+
+        // Determine typing speed
+        let typingSpeed = isDeleting ? 50 : 100;
+
+        // Pause briefly after fully typing the role
+        if (!isDeleting && charIndex === currentRole.length) {
+            typingSpeed = 2000; // Pause for 2 seconds
+            isDeleting = true; // Start deleting after the pause
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false; // Switch to typing mode
+            currentIndex = (currentIndex + 1) % roles.length; // Move to the next role
+        }
+
+        setTimeout(typeRole, typingSpeed);
+    }
+
+    // Start the typewriting animation
+    document.addEventListener("DOMContentLoaded", () => {
+        typeRole();
+    });
+</script>
+
 <!-- Existing Cards Section -->
-<div id="cards" class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-3 mx-6">
-  <div class="bg-linear-to-r/shorter from-zinc-600 to-sky-200/50 p-6 rounded-lg w-[60vw] mr-auto flex items-center justify-center">
+<div id="cards" class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-3 mx-6 animate-fadeIn delay-2">
+  <div class="bg-linear-to-br/shorter from-gray-800 via-gray-600 via-50% to-sky-300/50 p-6 rounded-lg w-[60vw] mr-auto flex items-center justify-center md-shadow">
   </div>
   <div class="bg-gray-800 rounded-lg shadow-md w-[36vw] ml-auto">
     <img src="/Advith_Krishnan.jpg" alt="Advith Krishnan Profile" class="rounded-lg w-full h-full">
@@ -31,9 +72,9 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
 </div>
 
 <!-- Call-to-Action Section -->
-<div class="bg-gradient-to-b from-zinc-900 to-zinc-700 text-white py-12 px-8 text-center mt-12">
+<div class="bg-zinc-900 text-white py-12 px-8 text-center mt-12">
   <h2 class="text-2xl font-bold mb-4">Want to Collaborate?</h2>
   <p class="text-lg mb-6">Feel free to reach out to me for exciting projects or just to say hi!</p>
-  <a href="/contact_me" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded">Contact Me</a>
+  <a href="/contact_me" class="bg-orange-400 hover:bg-orange-300 text-white font-bold py-2 px-4 rounded">Contact Me</a>
 </div>
 </Layout>

@@ -70,3 +70,31 @@ a {
 .navbar-header {
     color: white;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards; /* 'forwards' ensures the final state is retained */
+    opacity: 0; /* Start with hidden state */
+}
+
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 1.5s;
+}
+
+.delay-3 {
+    animation-delay: 1.5s;
+}
