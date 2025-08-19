@@ -16,7 +16,7 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
 
 <Layout>
 <!-- Hero Section -->
-<div class="hero bg-zinc-900 text-white py-8 px-8 text-center rounded-lg mx-6 animate-fadeIn delay-1">
+<div class="hero bg-radial-[at_50%_40%] from-zinc-800 from-20% to-zinc-900 to-50% text-white py-4 px-4 text-center rounded-lg mx-6 animate-fadeIn delay-1">
     <h1 class="text-6xl font-semibold text-white text-center">Hi! I'm Advith Krishnan :)</h1>
     <p class="text-2xl font-medium text-gray-300 mt-4">
       I can be your <span id="role" class="text-white bg-sky-500 px-2 py-1"></span>
@@ -24,7 +24,7 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
 </div>
 
 <script>
-	const roles = [" 🤖 AI/ML Engineer ", " 💻 Software Engineer ", " 🧠 AI Researcher ", " 🌐 Full Stack Engineer ", " 🎨 Designer ", " 🏖️ Freelance Developer ", " ✍️ Technical Writer "]
+	const roles = [" 🤖 AI/ML Engineer. ", " 💻 Software Engineer. ", " 🧠 AI Researcher. ", " 🌐 Full Stack Engineer. ", " 🔧 Hardware/Low-Level Engineer. ", " 🎨 Designer. ", " 🏖️ Freelance Developer. ", " ✍️ Technical Writer. ", " 🤝 Community Builder. "]
     let currentIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -64,10 +64,29 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
 
 <!-- Existing Cards Section -->
 <div id="cards" class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-3 mx-6 animate-fadeIn delay-2">
-  <div class="bg-linear-to-br/shorter from-gray-800 via-gray-600 via-50% to-sky-300/50 p-6 rounded-lg w-[60vw] mr-auto flex items-center justify-center md-shadow">
-  </div>
-  <div class="bg-gray-800 rounded-lg shadow-md w-[36vw] ml-auto">
-    <img src="/Advith_Krishnan.jpg" alt="Advith Krishnan Profile" class="rounded-lg w-full h-full">
+  <div class="flex flex-row gap-3 mx-auto w-[97vw]">
+    <div class="flex flex-col h-[40vw] gap-y-3 mx-auto">
+      <!-- Top Card -->
+      <div class="bg-zinc-800 h-[8vw] w-[30vw] p-6 rounded-lg ml-auto flex items-center justify-center md-shadow transform transition-transform duration-300 hover:scale-105 overflow-hidden">
+        <div class="text-center">
+          <h2 class="text-white mb-2 font-semibold">Play this while you go through the profile</h2>
+          <audio controls class="w-full">
+            <source src="/path-to-your-audio-file.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+      <!-- Bottom Card -->
+      <div class="bg-zinc-800 h-[32vw] w-[30vw] p-6 rounded-lg ml-auto flex items-center justify-center md-shadow transform transition-transform duration-300 hover:scale-105">
+      </div>
+    </div>
+    <!-- Middle Card -->
+    <div class="bg-zinc-800 h-[40vw] w-[30vw] p-6 rounded-lg mr-auto flex items-center justify-center md-shadow transform transition-transform duration-300 hover:scale-105">
+    </div>
+    <!-- Image Card -->
+    <div class="bg-gray-800 rounded-lg shadow-md w-[40vw] h-[40vw] ml-auto transform transition-transform duration-300 hover:scale-105">
+      <img src="/Advith_Krishnan.jpg" alt="Advith Krishnan Profile" class="rounded-lg w-full h-full">
+    </div>
   </div>
 </div>
 
@@ -75,6 +94,6 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
 <div class="bg-zinc-900 text-white py-12 px-8 text-center mt-12">
   <h2 class="text-2xl font-bold mb-4">Want to Collaborate?</h2>
   <p class="text-lg mb-6">Feel free to reach out to me for exciting projects or just to say hi!</p>
-  <a href="/contact_me" class="bg-sky-400 hover:bg-sky-300 text-white font-bold py-2 px-4 rounded">Contact Me</a>
+  <a href="/contact-me" class="bg-sky-400 hover:bg-sky-300 text-white font-bold py-2 px-4 rounded">Contact Me</a>
 </div>
 </Layout>

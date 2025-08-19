@@ -25,7 +25,6 @@ a {
 }
 
 .navbar {
-    background-color: rgb(24, 24, 27);
     display: flex; /* Enables flexbox for alignment */
     justify-content: space-between; /* Space between logo and links */
     align-items: center; /* Aligns items vertically */
@@ -48,7 +47,7 @@ a {
 }
 
 .navbar-refs {
-    padding: 10px 15px;
+    padding: 5px 10px;
     border-radius: 5px; /* Adds rounded corners */
     text-align: center;
 }

@@ -2,14 +2,14 @@
 import "../styles/global.css";
 ---
 
-<navbar class="navbar bg-linear-to-t/shorter from-zinc-900 from-50% to-zinc-800">
+<nav class="navbar bg-linear-to-t/shorter from-transparent from-5% to-zinc-900/50 sticky top-0 z-50">
     <div class="navbar-logo flex items-center gap-4">
-        <img src="/astro.jpg" alt="Astro Logo" class="navbar-logo"/>
-        <h2 class="text-xl font-bold text-white mt-1">Advith Krishnan's Portfolio</h2>
+        <img src="/astro.jpg" alt="Astro Logo" class="h-10 w-auto rounded-full" />
+        <h2 class="text-xl font-bold text-white mt-1">Advith Krishnan's Portfolio :)</h2>
     </div>
-    <ul class="navbar-li">
-        <li class="navbar-refs"><a href="/">Home</a></li>
-        <li class="navbar-refs"><a href="/blog">Blog</a></li>
-        <li class="navbar-refs"><a href="/contact_me">Contact</a></li>
+    <ul class="navbar-li flex gap-6">
+        <li class="navbar-refs"><a href="/" class="text-white hover:text-sky-400">Home</a></li>
+        <li class="navbar-refs"><a href="/blog" class="text-white hover:text-sky-400">Blog</a></li>
+        <li class="navbar-refs"><a href="/contact-me" class="text-white hover:text-sky-400">Contact</a></li>
     </ul>
-</navbar>
+</nav>

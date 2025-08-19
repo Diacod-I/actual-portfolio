@@ -2,14 +2,10 @@ const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: [
-    './src/**/*.{astro,html,js,jsx,ts,tsx}', // Ensure all Astro files are scanned
+    './src/**/*.{astro,js,ts,jsx,tsx}', // Ensure all Astro files are scanned
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter', ...fontFamily.sans],
-      },
-    },
+    extend: {},
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [],
 };
