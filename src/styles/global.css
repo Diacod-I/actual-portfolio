@@ -7,13 +7,13 @@ html, body {
 		height: 100%;
 }
 
+body {
+  user-select: none; /* Prevent text selection */
+}
+
 h1 {
     color: white;
     font-size: 4em;
-}
-
-p {
-    color: white;
 }
 
 li {
@@ -91,11 +91,11 @@ a {
 }
 
 .delay-2 {
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 
 .delay-3 {
-    animation-delay: 1.5s;
+    animation-delay: 2s;
 }
 
 /* audio {
@@ -106,4 +106,13 @@ a {
 audio::-webkit-media-controls-panel {
   -webkit-justify-content: center;
   height: 25px;
+}
+
+.image_card {
+    animation-delay: 1s
+}
+
+img {
+  pointer-events: none; /* Disable interaction */
+  user-drag: none; /* Disable dragging */
 }

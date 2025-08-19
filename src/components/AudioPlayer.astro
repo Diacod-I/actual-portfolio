@@ -1,0 +1,87 @@
+---
+export interface Props {
+  coverImage: string; // Path to the cover image
+  title: string;      // Title of the song
+  artist: string;     // Artist name
+  audioSrc: string;   // Path to the audio file
+}
+
+const { coverImage, title, artist, audioSrc } = Astro.props;
+---
+
+<div class="audio-player bg-radial-[at_0%_100%] from-zinc-800 from-30% to-sky-800/40 flex items-center gap-4 shadow-lg w-full mb-2">
+  <!-- Cover Image -->
+  <img src={coverImage} alt={`${title} cover`} class="w-16 h-16 object-cover" />
+
+  <!-- Song Info -->
+  <div class="flex flex-col justify-center w-full gap-2">
+    <div class="text-center">
+      <h3 class="text-md text-white font-bold">{title}</h3>
+      <p class="text-xs text-zinc-300">{artist}</p>
+    </div>
+  </div>
+
+  <!-- Icon Button for Play/Pause -->
+  <button
+    id="play-pause-btn"
+    class="flex items-center justify-center bg-white text-white mr-4 rounded-full shadow-md hover:bg-zinc-400 transition"
+    style="width: 60px; height: 28px; border: none; outline: none;"
+  >
+    <!-- Play Icon (Image) -->
+    <img
+      id="play-icon"
+      src="/play-button.png"
+      alt="Play"
+      class="h-4 w-4 ml-1"
+    />
+    <!-- Pause Icon (Image, Hidden by Default) -->
+    <img
+      id="pause-icon"
+      src="/pause-button.png"
+      class="h-4 w-4 hidden"
+    />
+  </button>
+
+  <!-- Hidden Audio Element -->
+  <audio id="custom-audio" src={audioSrc} class="hidden"></audio>
+</div>
+
+<script>
+  // Get references to the audio element and buttons
+  const audio = document.getElementById('custom-audio');
+  const playPauseBtn = document.getElementById('play-pause-btn');
+  const playIcon = document.getElementById('play-icon');
+  const pauseIcon = document.getElementById('pause-icon');
+
+  // Autoplay functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    // Attempt to autoplay the audio
+    audio.muted = true; // Mute the audio initially to bypass autoplay restrictions
+    audio.play().then(() => {
+      audio.muted = false; // Unmute the audio after playback starts
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
+    }).catch((error) => {
+      console.error('Autoplay failed:', error);
+    });
+  });
+
+  // Play/Pause functionality
+  playPauseBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
+    } else {
+      audio.pause();
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
+    }
+  });
+
+  // Reset icons when audio ends
+  audio.addEventListener('ended', () => {
+    playIcon.classList.remove('hidden');
+    pauseIcon.classList.add('hidden');
+  });
+</script>
