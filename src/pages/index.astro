@@ -19,12 +19,12 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
 <div class="hero bg-zinc-900 text-white py-8 px-8 text-center rounded-lg mx-6 animate-fadeIn delay-1">
     <h1 class="text-6xl font-semibold text-white text-center">Hi! I'm Advith Krishnan :)</h1>
     <p class="text-2xl font-medium text-gray-300 mt-4">
-      I can be your <span id="role" class="text-white bg-sky-400 px-2 py-1"></span>
+      I can be your <span id="role" class="text-white bg-sky-500 px-2 py-1"></span>
     </p>
 </div>
 
 <script>
-	const roles = [" AI/ML Engineer ", " Software Engineer ", " AI Researcher ", " Full Stack Engineer ", " Designer ", " Freelancer ", " Technical Writer "]
+	const roles = [" 🤖 AI/ML Engineer ", " 💻 Software Engineer ", " 🧠 AI Researcher ", " 🌐 Full Stack Engineer ", " 🎨 Designer ", " 🏖️ Freelance Developer ", " ✍️ Technical Writer "]
     let currentIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -35,10 +35,10 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
 
         if (isDeleting) {
             // Remove characters but stop at 1 character
-            roleElement.textContent = currentRole.substring(0, charIndex--);
+            roleElement.textContent = currentRole.substring(0, charIndex--) + "_";
         } else {
             // Add characters
-            roleElement.textContent = currentRole.substring(0, charIndex++);
+            roleElement.textContent = currentRole.substring(0, charIndex++) + " ▋";
         }
 
         // Determine typing speed
