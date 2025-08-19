@@ -97,3 +97,13 @@ a {
 .delay-3 {
     animation-delay: 1.5s;
 }
+
+/* audio {
+  width: 115px;
+  height: 25px;
+} */
+
+audio::-webkit-media-controls-panel {
+  -webkit-justify-content: center;
+  height: 25px;
+}
