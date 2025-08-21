@@ -20,7 +20,7 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
 <div class="hero bg-radial-[at_50%_50%] from-zinc-800/90 from-20% to-zinc-900/50 to-50% text-white py-4 px-4 text-center mx-6 mt-2 mb-4 animate-fadeIn delay-1">
     <h1 class="text-6xl font-semibold text-white text-center">Hi! I'm Advith Krishnan :)</h1>
     <p class="text-2xl text-center font-medium text-gray-300 mt-4">
-      I can be your <span id="role" class="text-white bg-sky-500 rounded-md px-2 py-1"></span>
+      I can be your <span id="role" class="text-white bg-sky-500/90 rounded-4xl px-3 py-2"></span>
     </p>
 </div>
 
@@ -47,7 +47,7 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
 
         // Pause briefly after fully typing the role
         if (!isDeleting && charIndex === currentRole.length) {
-            typingSpeed = 2000; // Pause for 2 seconds
+            typingSpeed = 500; // Pause for 0.5 seconds
             isDeleting = true; // Start deleting after the pause
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false; // Switch to typing mode
@@ -65,7 +65,7 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
 
 <!-- Cards Section -->
 <div class="bg-radial-[at_50%_40%] from-sky-800/40 to-zinc-900 to-50% animate-fadeIn delay-2">
-<div id="cards" class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-3 mx-6">
+<div id="cards" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 mx-6">
   <div class="flex flex-row gap-2 mx-auto w-[97vw]">
     <div class="flex flex-col h-[40vw] mx-auto animate-fadeIn delay-3">
       <!-- Left Card column -->
@@ -81,13 +81,21 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
             />
         </div>
       <!-- Publications Card -->
-      <div class="bg-zinc-700/90 h-[32vw] w-[33vw] p-6 ml-auto flex items-center justify-center md-shadow transform transition-transform duration-300 hover:scale-102 animate-fadeIn delay-3">
-          <h2 class="text-2xl font-semibold text-white mb-auto mr-auto">Check out my recent publication 👇</h2>
+      <div class="bg-zinc-700/90 h-[32vw] w-[33vw] p-6 ml-auto flex flex-col justify-start md-shadow transform transition-transform duration-300 hover:scale-102 animate-fadeIn delay-3">
+        <h2 class="text-2xl font-semibold text-white mb-4">Check out my recent publication 👇</h2>
+        <a 
+          href="https://dl.acm.org/doi/10.1145/3702250.3702279" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-sky-500 hover:underline text-lg"
+        >
+          Click here to view the publication
+        </a>
       </div>
     </div>
     <!-- Middle Card Column -->
     <!-- Image Card -->
-    <div class="image_card bg-gray-800 shadow-md w-[29vw] h-[27vw] transform transition-transform duration-300 hover:scale-102 animate-fadeIn delay-2 mt-5">
+    <div class="image_card bg-gray-800 shadow-md w-[29vw] h-[26vw] transform transition-transform duration-300 hover:scale-102 animate-fadeIn delay-2 mt-5">
       <img src="/Advith_Krishnan.png" alt="Advith Krishnan Profile" class="w-full h-full">
       <!-- <div class="bg-zinc-700/0 h-[5vw] w-[29vw] p-6 mr-auto flex items-center justify-center md-shadow transform transition-transform duration-300 hover:scale-102 animate-fadeIn delay-3">
         <h2 class="text-2xl font-semibold text-center text-white">Just a chill guy (;</h2>
@@ -111,7 +119,7 @@ const skills = ["Python", "TypeScript", "HTML", "CSS", "JavaScript", "C++", "C"]
 <div class="bg-zinc-900 text-white py-12 px-8 text-center mt-12">
   <h2 class="text-2xl font-bold mb-4">Want to Collaborate?</h2>
   <p class="text-lg mb-6">Feel free to reach out to me for exciting projects or just to say hi!</p>
-  <a href="/contact-me" class="bg-sky-400 hover:bg-sky-300 text-white font-bold py-2 px-4">Contact Me</a>
+  <a href="/contact-me" class="bg-sky-500/90 hover:bg-sky-300 rounded-4xl text-white font-bold py-2 px-4">Contact Me</a>
 </div>
 
 <script>
